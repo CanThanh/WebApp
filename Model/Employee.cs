@@ -18,5 +18,9 @@ namespace Model
         [Required(ErrorMessage = "Vui lòng nhập lương")]
         [Range(0, Double.MaxValue, ErrorMessage = "Vui lòng nhập kiểu số")]
         public double Salary { get; set; }
+        [Display(Name = "Địa chỉ")]
+        public string Address { get; set; }
+        [Display(Name = "Số điện thoại")]
+        public string Phone { get; set; }
     }
 }

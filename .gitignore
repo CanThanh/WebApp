@@ -11,6 +11,7 @@
 Model/*.dll
 Common/*.dll
 *.exe
+*.dll
 *.pdb
 *.dll.config
 *.cache
