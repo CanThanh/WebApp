@@ -86,6 +86,7 @@ var employeeController = {
     },
 
     loadData: function (changePageSize) {
+        $("#divLoading").show();
         var inputData = {
             PageIndex: employeeConfig.pageIndex,
             PageSize: employeeConfig.pageSize,
@@ -124,6 +125,7 @@ var employeeController = {
                         },
                         changePageSize);
                     employeeController.registerEvent();
+                    $("#divLoading").hide();
                 }
             }
         });

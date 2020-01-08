@@ -6,6 +6,18 @@
 *.user
 *.userosscache
 *.sln.docstates
+*.com
+*.class
+Model/*.dll
+Common/*.dll
+*.exe
+*.pdb
+*.dll.config
+*.cache
+*.suo
+# Include dlls if they're in the NuGet packages directory
+!/packages/*/lib/*.dll
+!/packages/*/lib/*/*.dll
 
 # User-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs

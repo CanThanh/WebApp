@@ -66,6 +66,9 @@
                     <div id="divSearchResult">
 
                     </div>
+                    <div id="divLoading" style="text-align:center; font-size:1.1em; display:none">
+                        Đang tải dữ liệu<img src="~/Content/Images/loading.gif" alt="Tải dữ liệu" />
+                    </div>
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer clearfix pull-right">
@@ -95,6 +98,7 @@
         });
 
         function Search(pageIndex) {
+            $("#divLoading").show();
             var fileData = new FormData($('#frmSearch')[0]);
 
             var inputData = {
@@ -123,7 +127,7 @@
                         }
                     }
                     $('#pagerBottom').bootstrapPaginator(options);
-
+                    $("#divLoading").hide();
                 },
                 error: function (XMLHttpRequest, textStatus, errorThrown) {
                 }
