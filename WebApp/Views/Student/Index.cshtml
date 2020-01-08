@@ -1,0 +1,162 @@
+﻿@model WebApp.Models.StudentSearchModel
+
+@{
+    ViewBag.Title = "Student";
+}
+
+<link href="~/Content/bootstrap-paginator.css" rel="stylesheet" />
+
+<section class="content">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card card-outline card-info">
+                <div class="card-header">
+                    <h3 class="card-title">
+                        Search
+                        @*<small>Student</small>*@
+                    </h3>
+                    <!-- tools box -->
+                    <div class="card-tools">
+                        <button type="button" class="btn btn-tool btn-sm" data-card-widget="collapse" data-toggle="tooltip"
+                                title="Collapse">
+                            <i class="fa fa-minus"></i>
+                        </button>
+                        <button type="button" class="btn btn-tool btn-sm" data-card-widget="remove" data-toggle="tooltip"
+                                title="Remove">
+                            <i class="fa fa-times"></i>
+                        </button>
+                    </div>
+                    <!-- /. tools -->
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    @using (Html.BeginForm(null, null, FormMethod.Get, new { id = "frmSearch" }))
+                    {
+                        <div class="form-group col-sm-6">
+                            @Html.LabelFor(m => m.Keyword)
+                            @Html.TextBoxFor(m => m.Keyword, new { @class = "form-control", placeholder = "Nhập từ khóa cần tìm kiếm" })
+                        </div>
+                        <div class="form-group col-sm-6">
+                            @Html.LabelFor(m => m.Description)
+                            @Html.TextBoxFor(m => m.Description, new { @class = "form-control", placeholder = "Nhập từ khóa cần tìm kiếm" })
+                        </div>
+                        <div class="form-group pull-right">
+                            <input id="btnSearch" class="btn btn-primary" type="button" value="Tìm kiếm" />
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- /.col-->
+    </div>
+    <!-- ./row -->
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">List student</h3>
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <div class="pull-right mb-5">
+                        <input id="btnAdd" class="btn btn-primary" type="button" value="Thêm mới"  onclick="AddOrEdit(0)"/>
+                    </div>
+
+                    <div id="divSearchResult">
+
+                    </div>
+                </div>
+                <!-- /.card-body -->
+                <div class="card-footer clearfix pull-right">
+                    <input type="hidden" id="hdfCurrentPageIndex" />
+                    <div id="pagerBottom" class="pull-right">
+                    </div>
+                </div>
+            </div>
+            <!-- /.card -->
+        </div>
+        <!-- /.col -->
+    </div>
+</section>
+
+@section scripts{
+    <script src="~/Scripts/bootstrap-paginator.js"></script>
+
+    <script>
+        var pageSize = 5;
+        $( document ).ready(function() {
+            Search(1);
+            //$("#myModal").modal("toggle");
+        });
+
+        $("#btnSearch").click(function() {
+            Search(1);
+        });
+
+        function Search(pageIndex) {
+            var fileData = new FormData($('#frmSearch')[0]);
+
+            var inputData = {
+                PageIndex: pageIndex,
+                PageSize: pageSize,
+                Cretia: objectifyForm($('#frmSearch').serializeArray())
+                //Cretia: JSON.stringify(fileData)
+                //Cretia: fileData
+            };
+
+            $.ajax({
+                url: '@Url.Action("Search", "Student")',
+                type: "POST",
+                data: inputData,
+                success: function (result) {
+                    $("#divSearchResult").html(result);
+                    $("#hdfCurrentPageIndex").val(pageIndex);
+                    var options = {
+                        currentPage: pageIndex,
+                        totalPages: Math.ceil($("#TotalRecord").val()/pageSize),
+                        onPageChanged: function (e, oldPage, newPage) {
+                            Search(newPage);
+                        },
+                        itemContainerClass: function (type, page, current) {
+                            return (page === current) ? "active" : "pointer-cursor";
+                        }
+                    }
+                    $('#pagerBottom').bootstrapPaginator(options);
+
+                },
+                error: function (XMLHttpRequest, textStatus, errorThrown) {
+                }
+            });
+        }
+
+        //Ẩn button nếu cần thiết
+        function AddOrEdit(id) {
+            $.ajax({
+                url: '@Url.Action("AddOrEdit","Student")',
+                type: "GET",
+                data: {
+                    "id": id
+                },
+                success: function (response) {
+                    $('#myModal div.modal-dialog').empty();
+                    $('#myModal div.modal-dialog').append(response);
+                    $('#myModal').modal('toggle');
+                }
+            });
+        }
+
+        function Remove(id) {
+            $.ajax({
+                url: '@Url.Action("AddOrEdit","Student")',
+                type: "POST",
+                data: {
+                    "id": id
+                },
+                success: function (response) {
+                    Search(1);
+                }
+            });
+        }
+    </script>
+}

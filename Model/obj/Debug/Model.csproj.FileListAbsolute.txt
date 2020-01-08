@@ -1,0 +1,12 @@
+C:\Users\ThanhCV\source\repos\Demo\Model\bin\Debug\Model.dll
+C:\Users\ThanhCV\source\repos\Demo\Model\bin\Debug\Model.pdb
+C:\Users\ThanhCV\source\repos\Demo\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\ThanhCV\source\repos\Demo\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\ThanhCV\source\repos\Demo\Model\obj\Debug\Model.dll
+C:\Users\ThanhCV\source\repos\Demo\Model\obj\Debug\Model.pdb
+D:\Demo\Model\bin\Debug\Model.dll
+D:\Demo\Model\bin\Debug\Model.pdb
+D:\Demo\Model\obj\Debug\Model.csprojAssemblyReference.cache
+D:\Demo\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+D:\Demo\Model\obj\Debug\Model.dll
+D:\Demo\Model\obj\Debug\Model.pdb

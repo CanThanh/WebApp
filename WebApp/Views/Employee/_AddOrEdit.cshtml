@@ -1,0 +1,49 @@
+﻿@using Common
+@model Model.Employee
+
+@*@Scripts.Render("~/bundles/jqueryval")*@
+
+@using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmAddOrEdit" }))
+{
+    <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4>
+                EMPLOYEE
+                @*<small>
+                        <i class="fa fa-angle-double-right"></i>
+                        Update Infor
+                    </small>*@
+            </h4>
+        </div>
+        <div class="modal-body">
+            @Html.HiddenFor(m => m.Id)
+            <div class="form-group">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(m => m.Salary)
+                @Html.TextBoxFor(m => m.Salary, new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Salary, "", new { @class = "text-danger" })
+            </div>
+            
+            @*<div class="form-group">
+                @Html.LabelFor(m => m.UploadFiles)
+                @Html.TextBoxFor(m => m.UploadFiles, "", new { @type = "file", @multiple = "multiple", accept = CommonConstants.AcceptUploadFiles })
+            </div>*@
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">
+                <span class="fa fa-undo"></span>
+                Thoát
+            </button>
+            <button type="button" class="btn btn-primary" id="btnSave">
+                <span class=" fa fa-save"></span>
+                Cập nhật
+            </button>
+        </div>
+    </div>
+}
