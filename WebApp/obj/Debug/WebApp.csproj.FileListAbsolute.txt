@@ -329,8 +329,6 @@ C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\Microsoft.CodeDom.Providers
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\Model.dll
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\Newtonsoft.Json.dll
-C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\PagedList.dll
-C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\PagedList.Mvc.dll
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\System.Web.Helpers.dll
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\System.Web.Mvc.dll
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\System.Web.Optimization.dll
@@ -341,8 +339,6 @@ C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\System.Web.WebPages.Razor.d
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\WebGrease.dll
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\Common.pdb
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\Model.pdb
-C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\PagedList.xml
-C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\PagedList.Mvc.xml
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\System.Web.Helpers.xml
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\System.Web.Mvc.xml
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\System.Web.Optimization.xml
@@ -358,3 +354,5 @@ C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\obj\Debug\WebApp.csproj.CoreCom
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\obj\Debug\WebApp.csproj.CopyComplete
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\obj\Debug\WebApp.dll
 C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\obj\Debug\WebApp.pdb
+C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\CKFinder.dll
+C:\Users\ThanhCV\source\repos\Demo\WebApp\WebApp\bin\CKFinder.pdb

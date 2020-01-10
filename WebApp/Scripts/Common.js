@@ -17,3 +17,53 @@ function getFormData($form){
 
     return indexedArray;
 }
+
+toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+}
+
+function messageSuccess(message) {
+    toastr["success"](message);
+}
+
+function messageError(message) {
+
+    toastr["error"](message);
+}
+
+function messageWarning(message) {
+    toastr["warning"](message);
+}
+
+function confirmDelete(title, message, callback) {
+
+    bootbox.confirm({
+        title: title,
+        message: message,
+        buttons: {
+            cancel: {
+                label: '<i class="fa fa-times"></i> Thoát',
+                className: 'btn-sm'
+            },
+            confirm: {
+                label: '<i class="fa fa-check"></i> Đồng ý',
+                className: 'btn btn-sm btn-green-site'
+            }
+        },
+        callback: callback
+    });
+}

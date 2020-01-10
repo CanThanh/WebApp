@@ -22,6 +22,7 @@ namespace WebApp
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                     "~/Scripts/bootstrap.js",
                     "~/Plugins/AdminLte/js/adminlte.js",
+                    "~/Plugins/toastr/toastr.js",
                     "~/Scripts/Common.js"
                 ));
 
@@ -29,6 +30,7 @@ namespace WebApp
                       "~/Plugins/AdminLte/css/adminlte.css",
                       "~/Content/bootstrap.css",
                       "~/Plugins/fontawesome-free/css/all.css",
+                      "~/Plugins/toastr/toastr.css",
                       "~/Content/Site.css"
                 ));
         }

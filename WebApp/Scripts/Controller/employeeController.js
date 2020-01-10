@@ -66,6 +66,11 @@ var employeeController = {
         });
     },
 
+    configCkeditor: function() {
+        CKEDITOR.replace('Name');
+        CKEDITOR.instances['Name'].setData($("#Name").val());
+    },
+
     loadDetail: function (id) {
         $.ajax({
             url: '/Employee/AddOrEdit',
@@ -78,6 +83,7 @@ var employeeController = {
                 $('#myModal div.modal-dialog').append(response);
                 $('#myModal').modal('toggle');
                 employeeController.registerEvent();
+                //employeeController.configCkeditor();
             },
             error: function (err) {
                 console.log(err);
@@ -150,14 +156,17 @@ var employeeController = {
                 prev: "Trước",
                 visiblePages: 5,
                 onPageClick: function (event, page) {
-                    employeeConfig.pageIndex = page;
-                    setTimeout(callback, 200);
+                    if (employeeConfig.pageIndex !== page) {
+                        employeeConfig.pageIndex = page;
+                        setTimeout(callback, 200);
+                    }
                 }
             });
         }
     },
 
     saveData: function () {
+        //$('#Name').val(CKEDITOR.instances["Name"].getData());
         if ($("#frmAddOrEdit").valid()) {
             var fileData = new FormData($('#frmAddOrEdit')[0]);
             $.ajax({

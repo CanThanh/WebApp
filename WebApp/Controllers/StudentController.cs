@@ -4,7 +4,6 @@ using System.Linq;
 using System.Web.Mvc;
 using Common;
 using Model;
-using PagedList;
 using WebApp.Models;
 
 namespace WebApp.Controllers
