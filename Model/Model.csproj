@@ -42,7 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\DesignDbConst.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="Entity\Base\BaseEntity.cs" />
+    <Compile Include="Entity\Base\Log.cs" />
+    <Compile Include="Entity\Base\Menu.cs" />
+    <Compile Include="Entity\Base\Permission.cs" />
+    <Compile Include="Entity\Base\Role.cs" />
+    <Compile Include="Entity\Base\RoleUserGroup.cs" />
+    <Compile Include="Entity\Base\RoleUserType.cs" />
+    <Compile Include="Entity\Base\LoginFail.cs" />
+    <Compile Include="Entity\Base\User.cs" />
+    <Compile Include="Entity\Base\UserGroup.cs" />
+    <Compile Include="Entity\Base\RolePermission.cs" />
+    <Compile Include="Entity\Base\UserGroupUser.cs" />
+    <Compile Include="Entity\Base\UserType.cs" />
+    <Compile Include="Model\Account\LoginModel.cs" />
     <Compile Include="Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,0 +1,91 @@
+﻿@model Model.Model.Account.LoginModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Đăng nhập hệ thống</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Login/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="limiter">
+        <div class="container-login100" style="background-image: url('/Content/Images/bg-01.jpg');">
+            <div class="wrap-login100 p-l-55 p-r-55 p-t-65 p-b-54">
+                @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "frmLogin", @class = "login100-form validate-form", @onsubmit = "return false;" }))
+                {
+                    <span class="login100-form-title p-b-49">
+                        Đăng nhập hệ thống
+                    </span>
+
+                    <div class="wrap-input100 validate-input m-b-23" data-validate="Tên đăng nhập không được để trống">
+                        <span class="label-input100">Tên đăng nhập</span>
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "input100", @placeholder = "Tên đăng nhập" })
+                        <span class="focus-input100" data-symbol="&#xf206;"></span>
+                    </div>
+
+                    <div class="wrap-input100 validate-input" data-validate="Mật khẩu không được để trống">
+                        <span class="label-input100">Mật khẩu</span>
+                        @Html.PasswordFor(m => m.Password, new { @class = "input100", @placeholder = "Mật khẩu" })
+                        <span class="focus-input100" data-symbol="&#xf190;"></span>
+                    </div>
+
+                    <div class="form-check p-t-8 p-b-31">
+                        @Html.CheckBoxFor(m => m.Checked, new { @class = "form-check-input" })
+                        @Html.LabelFor(m => m.Checked, new { @class = "form-check-label p-l-15" })
+                        <a href="#" class="text-right pull-right">
+                            Forgot password?
+                        </a>
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <div class="wrap-login100-form-btn">
+                            <div class="login100-form-bgbtn"></div>
+                            <button class="login100-form-btn" id="btnLogin">
+                                Đăng nhập
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="txt1 text-center p-t-54 p-b-20">
+                        <span>
+                            Hoặc
+                        </span>
+                    </div>
+
+                    <div class="flex-c-m">
+                        <a href="#" class="login100-social-item bg1">
+                            <i class="fa fa-facebook"></i>
+                        </a>
+
+                        <a href="#" class="login100-social-item bg2">
+                            <i class="fa fa-twitter"></i>
+                        </a>
+
+                        <a href="#" class="login100-social-item bg3">
+                            <i class="fa fa-google"></i>
+                        </a>
+                    </div>
+
+                    <div class="flex-col-c p-t-155">
+
+                        <a href="#" class="txt2">
+                            Đăng ký
+                        </a>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Login/js")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="~/Scripts/Controller/loginController.js"></script>
+</body>
+</html>

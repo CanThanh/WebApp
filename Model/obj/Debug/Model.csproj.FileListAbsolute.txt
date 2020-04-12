@@ -15,3 +15,9 @@ C:\Users\ThanhCV\source\repos\Demo\WebApp\Model\bin\Debug\Model.pdb
 C:\Users\ThanhCV\source\repos\Demo\WebApp\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 C:\Users\ThanhCV\source\repos\Demo\WebApp\Model\obj\Debug\Model.dll
 C:\Users\ThanhCV\source\repos\Demo\WebApp\Model\obj\Debug\Model.pdb
+E:\Software\Core\WebApp\Model\bin\Debug\Model.dll
+E:\Software\Core\WebApp\Model\bin\Debug\Model.pdb
+E:\Software\Core\WebApp\Model\obj\Debug\Model.csprojAssemblyReference.cache
+E:\Software\Core\WebApp\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+E:\Software\Core\WebApp\Model\obj\Debug\Model.dll
+E:\Software\Core\WebApp\Model\obj\Debug\Model.pdb

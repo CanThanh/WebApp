@@ -1,0 +1,83 @@
+﻿@model Model.Model.Account.LoginModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Đăng nhập</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Account/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="hold-transition login-page" style="background-image: url('/Content/Images/bg-01.jpg');">
+    <div class="login-box">
+        @*<div class="login-logo">
+            <a href="#"><b>Đăng nhập hệ thống</b></a>
+        </div>*@
+        <!-- /.login-logo -->
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Đăng nhập hệ thống</p>
+                @using (Html.BeginForm("Login", "Account", FormMethod.Post, new { id = "frmLogin" }))
+                {
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "Tên đăng nhập" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        </div>
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Mật khẩu" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="checkbox icheck">
+                                <label>
+                                    @Html.CheckBoxFor(m => m.Checked) Ghi nhớ
+                                </label>
+                            </div>
+                        </div>
+                        <!-- /.col -->
+                        <div class="col-6">
+                            @*<input id="btnLogin" type="button" class="btn btn-primary btn-block btn-flat" value="Đăng nhập" />*@
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng nhập</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                }
+                <div class="social-auth-links text-center mb-3">
+                    <p>- Hoặc -</p>
+                    <a href="#" class="btn btn-block btn-primary">
+                        <i class="fa fa-facebook mr-2"></i> Đăng nhập Facebook
+                    </a>
+                    <a href="#" class="btn btn-block btn-danger">
+                        <i class="fa fa-google-plus mr-2"></i> Đăng nhập Google+
+                    </a>
+                </div>
+                <!-- /.social-auth-links -->
+                <p class="mb-2">
+                    <a href="#">Quên mật khẩu</a>
+                </p>
+                <p class="mb-0">
+                    <a href="@Url.Action("Register","Account")" class="text-center">Đăng ký</a>
+                </p>
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+    <!-- /.login-box -->
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Account/js")
+    @Scripts.Render("~/bundles/jqueryval")
+</body>
+</html>

@@ -1,0 +1,98 @@
+﻿@model Model.Model.Account.RegisterModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Đăng ký</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    @Styles.Render("~/Account/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body class="hold-transition register-page">
+    <div class="register-box">
+        @*<div class="register-logo">
+                <a href="#"><b>Đăng ký hệ thống</b></a>
+            </div>*@
+        <div class="card">
+            <div class="card-body login-card-body">
+                <p class="login-box-msg">Đăng ký hệ thống</p>
+                @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { id = "frmLogin" }))
+                {
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-info"></i></span>
+                        </div>
+                        @Html.TextBoxFor(m => m.FullName, new { @class = "form-control", @placeholder = "Họ và tên" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                        </div>
+                        @Html.TextBoxFor(m => m.UserName, new { @class = "form-control", @placeholder = "Tên đăng nhập" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.UserName, "", new { @class = "text-danger" })
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        </div>
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @placeholder = "Mật khẩu" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                        </div>
+                        @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control", @placeholder = "Nhập lại mật khẩu" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.ConfirmPassword, "", new { @class = "text-danger" })
+
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                        </div>
+                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email" })
+                    </div>
+                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+
+                    <div class="g-recaptcha" data-sitekey="6LdON-YUAAAAAGwjZNL0Ybcw7Jf7zsEXTKabwNYS"></div>
+
+                    <div class="row">
+                        <!-- /.col -->
+                        <div class="col-4"></div>
+                        <div class="col-4">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">Đăng ký</button>
+                        </div>
+                        <!-- /.col -->
+                    </div>
+                }
+                <div class="social-auth-links text-center mb-2">
+                    <p>- Hoặc -</p>
+                    <a href="#" class="btn btn-block btn-primary">
+                        <i class="fa fa-facebook mr-2"></i> Đăng ký Facebook
+                    </a>
+                    <a href="#" class="btn btn-block btn-danger">
+                        <i class="fa fa-google-plus mr-2"></i> Đăng ký Google+
+                    </a>
+                </div>
+                <a href="@Url.Action("Login","Account")" class="text-center">Đăng nhập</a>
+            </div>
+            <!-- /.login-card-body -->
+        </div>
+    </div>
+    <!-- /.register-box -->
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/Account/js")
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src='https://www.google.com/recaptcha/api.js' type="text/javascript"></script>
+</body>
+</html>

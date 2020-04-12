@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web.Mvc;
 using Common;
 using Model;
+using Repository;
 using WebApp.Models;
 
 namespace WebApp.Controllers
@@ -29,6 +30,25 @@ namespace WebApp.Controllers
         // GET: Student
         public ActionResult Index()
         {
+            try
+            {
+                using (var context = new BaseDbContext())
+                {
+                    var lst = (from u in context.Users
+                              join ut in context.UserTypes on u.UserTypeId equals ut.Id
+                              select ut).ToList();
+                    var temp = context.Users.ToList();
+                    //var temp2 = context.UserTypes.Where(x => x.Users.Select(y => y.Id).ToList().Contains("b426d975-311a-4a44-ad8f-86a68c903f86")).ToList();
+                    var xy = 1;
+                    xy += 10;
+
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
             InitData();
             var data = new StudentSearchModel();
             return View(data);

@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace WebApp
 {
@@ -20,18 +19,43 @@ namespace WebApp
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                    "~/Scripts/bootstrap.js",
-                    "~/Plugins/AdminLte/js/adminlte.js",
-                    "~/Plugins/toastr/toastr.js",
-                    "~/Scripts/Common.js"
+                        "~/Plugins/AdminLte/js/adminlte.js",
+                        "~/Scripts/bootstrap.js",
+                        "~/Plugins/toastr/toastr.js",
+                        "~/Scripts/Common.js"
                 ));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Plugins/AdminLte/css/adminlte.css",
-                      "~/Content/bootstrap.css",
-                      "~/Plugins/fontawesome-free/css/all.css",
-                      "~/Plugins/toastr/toastr.css",
-                      "~/Content/Site.css"
+                        "~/Plugins/AdminLte/css/adminlte.css",
+                        "~/Content/bootstrap.css",
+                        "~/Plugins/font-awesome-4.7.0/css/font-awesome.css",
+                        "~/Plugins/toastr/toastr.css",
+                        "~/Content/Site.css"
+                ));
+
+            bundles.Add(new StyleBundle("~/Account/css").Include(
+                //"~/Content/bootstrap.css",
+                //"~/Plugins/font-awesome-4.7.0/css/font-awesome.css",
+                //"~/Content/Login/material-design-iconic-font.css",
+                //"~/Content/Login/animate.css",
+                //"~/Content/Login/hamburgers.css",
+                //"~/Content/Login/animsition.css",
+                //"~/Content/Login/util.css",
+                //"~/Content/Login/main.css"
+
+                "~/Plugins/font-awesome-4.7.0/css/font-awesome.css",
+                "~/Plugins/AdminLte/css/adminlte.css",
+                "~/Plugins/iCheck/square/blue.css",
+                "~/Content/Site.css"
+                ));
+            bundles.Add(new ScriptBundle("~/Account/js").Include(
+                //"~/Scripts/Login/animsition.js",
+                //"~/Scripts/Login/popper.js",
+                //"~/Scripts/bootstrap.js",
+                //"~/Scripts/Login/main.js"
+
+                "~/Scripts/bootstrap.js",
+                "~/Plugins/iCheck/icheck.js"
                 ));
         }
     }
